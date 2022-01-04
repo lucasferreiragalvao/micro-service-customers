@@ -14,5 +14,7 @@ public interface CustomerDataGateway {
 
   Optional<Customer> findByCpf(String cpf);
 
+  Optional<Customer> findByEmail(String email);
+
   Page<Customer> findByPage(Pageable pageable);
 }

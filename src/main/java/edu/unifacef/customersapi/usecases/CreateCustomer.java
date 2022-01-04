@@ -27,12 +27,20 @@ public class CreateCustomer {
 
   private void validate(Customer customer){
     validateCpfExist(customer);
+    validateEmailExist(customer);
   }
 
   private void validateCpfExist(Customer customer){
     log.info("Create customer. Customer CPF: {}", customer.getCpf());
     if(customerDataGateway.findByCpf(customer.getCpf()).isPresent()) {
       throw new IllegalArgumentException(messageUtils.getMessage(CUSTOMER_ALREADY_EXISTS, customer.getCpf()));
+    }
+  }
+
+  private void validateEmailExist(Customer customer){
+    log.info("Create customer. Customer Email: {}", customer.getEmail());
+    if(customerDataGateway.findByEmail(customer.getEmail()).isPresent()) {
+      throw new IllegalArgumentException(messageUtils.getMessage(CUSTOMER_ALREADY_EXISTS, customer.getEmail()));
     }
   }
 }

@@ -36,6 +36,10 @@ public class CustomerDataGatewayMongoImpl implements CustomerDataGateway {
     return customerRepository.findByCpf(cpf).map(CustomerDocument::toDomain);
   }
 
+  public Optional<Customer> findByEmail(final String email) {
+    return customerRepository.findByEmail(email).map(CustomerDocument::toDomain);
+  }
+
   @Override
   public Page<Customer> findByPage(final Pageable pageable) {
     return customerRepository.findAll(pageable).map(CustomerDocument::toDomain);
