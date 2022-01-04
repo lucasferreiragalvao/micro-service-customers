@@ -7,7 +7,6 @@ import lombok.Data;
 @Builder
 public class Address {
 
-    private String id;
     private String street;
     private String district;
     private String zip;

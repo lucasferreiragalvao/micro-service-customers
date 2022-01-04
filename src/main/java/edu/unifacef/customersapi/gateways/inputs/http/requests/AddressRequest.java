@@ -11,29 +11,25 @@ public class AddressRequest implements Serializable {
   private static final long serialVersionUID = -6834094997433764356L;
 
   @ApiModelProperty(position = 1)
-  private String id;
-
-  @ApiModelProperty(position = 2)
   private String street;
 
-  @ApiModelProperty(position = 3)
+  @ApiModelProperty(position = 2)
   private String district;
 
-  @ApiModelProperty(position = 4)
+  @ApiModelProperty(position = 3)
   private String zip;
 
-  @ApiModelProperty(position = 5)
+  @ApiModelProperty(position = 4)
   private String city;
 
-  @ApiModelProperty(position = 6)
+  @ApiModelProperty(position = 5)
   private String complement;
 
-  @ApiModelProperty(position = 7)
+  @ApiModelProperty(position = 6)
   private String uf;
 
   public Address toDomain() {
     return Address.builder()
-        .id(this.id)
         .street(this.street)
         .district(this.district)
         .zip(this.zip)

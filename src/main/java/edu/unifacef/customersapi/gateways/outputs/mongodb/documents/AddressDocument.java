@@ -18,7 +18,6 @@ public class AddressDocument {
 
   public AddressDocument(final Address address) {
 
-    this.id = address.getId();
     this.street = address.getStreet();
     this.district = address.getDistrict();
     this.zip = address.getZip();
@@ -30,7 +29,6 @@ public class AddressDocument {
 
   public Address toDomain() {
     return Address.builder()
-        .id(this.id)
         .street(this.street)
         .district(this.district)
         .zip(this.zip)
