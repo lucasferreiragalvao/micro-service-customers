@@ -29,10 +29,10 @@ public class UpdateCustomer {
   }
 
   private void validate(Customer customer){
-    validateCpfExist(customer);
+    validateExist(customer);
   }
 
-  private void validateCpfExist(Customer customer){
+  private void validateExist(Customer customer){
     log.info("Create customer. Customer CPF: {}", customer.getCpf());
 
     Customer oldCustomer = customerDataGateway.findByCode(customer.getId()).orElseThrow(()
@@ -43,5 +43,12 @@ public class UpdateCustomer {
         throw new IllegalArgumentException(messageUtils.getMessage(CUSTOMER_ALREADY_EXISTS, customer.getCpf()));
       }
     }
+
+    if(!oldCustomer.getEmail().equals(customer.getEmail())) {
+      if(customerDataGateway.findByEmail(customer.getEmail()).isPresent()) {
+        throw new IllegalArgumentException(messageUtils.getMessage(CUSTOMER_ALREADY_EXISTS, customer.getEmail()));
+      }
+    }
+
   }
 }

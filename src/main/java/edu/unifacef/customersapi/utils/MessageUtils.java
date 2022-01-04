@@ -14,6 +14,7 @@ public class MessageUtils {
   private final MessageSource messageSource;
 
   public String getMessage(final MessageKey messageKey, final Object... param) {
-    return messageSource.getMessage(messageKey.getCpf(), param, getLocale());
+    return messageSource.getMessage(messageKey.getKey(), param, getLocale());
   }
+
 }
