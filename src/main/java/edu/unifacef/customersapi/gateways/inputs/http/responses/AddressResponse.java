@@ -9,7 +9,6 @@ public class AddressResponse implements Serializable {
 
   private static final long serialVersionUID = 7808546186559340341L;
 
-  private String id;
   private String street;
   private String district;
   private String zip;
@@ -19,7 +18,6 @@ public class AddressResponse implements Serializable {
 
   public AddressResponse(final Address address) {
 
-    this.id = address.getId();
     this.street = address.getStreet();
     this.district = address.getDistrict();
     this.zip = address.getZip();
