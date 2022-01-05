@@ -12,7 +12,7 @@ public class Customer {
     private String id;
     private String name;
     private String telephone;
-    private String walletNumber;
+    private String driverLincenseNumber;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private List<Address> addresses;

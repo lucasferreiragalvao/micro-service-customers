@@ -21,7 +21,7 @@ public abstract class CustomerRequest implements Serializable {
 
   @ApiModelProperty(position = 3)
   @NotNull(message = "{required.field}")
-  private String walletNumber;
+  private String driverLincenseNumber;
 
   @ApiModelProperty(position = 4)
   private List<AddressRequest> address;
