@@ -10,4 +10,7 @@ public interface CustomerRepository extends MongoRepository<CustomerDocument, St
     Optional<CustomerDocument> findByCpf(String cpf);
 
     Optional<CustomerDocument> findByEmail(String email);
+
+    Optional<CustomerDocument> findByDriverLincenseNumber(String driverLincenseNumber);
+
 }

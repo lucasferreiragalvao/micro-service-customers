@@ -16,5 +16,7 @@ public interface CustomerDataGateway {
 
   Optional<Customer> findByEmail(String email);
 
+  Optional<Customer> findByDriverLincenseNumber(String driverLincenseNumber);
+
   Page<Customer> findByPage(Pageable pageable);
 }

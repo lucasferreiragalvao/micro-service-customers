@@ -40,6 +40,10 @@ public class CustomerDataGatewayMongoImpl implements CustomerDataGateway {
     return customerRepository.findByEmail(email).map(CustomerDocument::toDomain);
   }
 
+  public Optional<Customer> findByDriverLincenseNumber(final String driverLincenseNumber) {
+    return customerRepository.findByDriverLincenseNumber(driverLincenseNumber).map(CustomerDocument::toDomain);
+  }
+
   @Override
   public Page<Customer> findByPage(final Pageable pageable) {
     return customerRepository.findAll(pageable).map(CustomerDocument::toDomain);

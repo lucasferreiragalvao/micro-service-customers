@@ -28,6 +28,7 @@ public class CreateCustomer {
   private void validate(Customer customer){
     validateCpfExist(customer);
     validateEmailExist(customer);
+    validateDriverLincenseNumber(customer);
   }
 
   private void validateCpfExist(Customer customer){
@@ -41,6 +42,13 @@ public class CreateCustomer {
     log.info("Create customer. Customer Email: {}", customer.getEmail());
     if(customerDataGateway.findByEmail(customer.getEmail()).isPresent()) {
       throw new IllegalArgumentException(messageUtils.getMessage(CUSTOMER_ALREADY_EXISTS, customer.getEmail()));
+    }
+  }
+
+  private void validateDriverLincenseNumber(Customer customer){
+    log.info("Create customer. Customer Driver Lincense Number: {}", customer.getDriverLincenseNumber());
+    if(customerDataGateway.findByDriverLincenseNumber(customer.getEmail()).isPresent()) {
+      throw new IllegalArgumentException(messageUtils.getMessage(CUSTOMER_ALREADY_EXISTS, customer.getDriverLincenseNumber()));
     }
   }
 }
