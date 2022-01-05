@@ -27,7 +27,7 @@ public class CustomerResponse implements Serializable {
   private String telephone;
 
   @ApiModelProperty(position = 3)
-  private String walletNumber;
+  private String driverLincenseNumber;
 
   @ApiModelProperty(position = 4)
   private List<AddressResponse> addresses;
@@ -51,7 +51,7 @@ public class CustomerResponse implements Serializable {
     this.id = customer.getId();
     this.name = customer.getName();
     this.telephone = customer.getTelephone();
-    this.walletNumber = customer.getWalletNumber();
+    this.driverLincenseNumber = customer.getDriverLincenseNumber();
     this.addresses = emptyIfNull(customer.getAddresses())
         .stream().map(AddressResponse::new).collect(toList());
     this.createdAt = customer.getCreatedAt();

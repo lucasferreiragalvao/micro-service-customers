@@ -20,7 +20,7 @@ public class CustomerDocument {
   private String id;
   private String name;
   private String telephone;
-  private String walletNumber;
+  private String driverLincenseNumber;
   private List<AddressDocument> addresses;
   private LocalDateTime createdAt;
   private String cpf;
@@ -33,7 +33,7 @@ public class CustomerDocument {
     this.id = customer.getId();
     this.name = customer.getName();
     this.telephone = customer.getTelephone();
-    this.walletNumber = customer.getWalletNumber();
+    this.driverLincenseNumber = customer.getDriverLincenseNumber();
     this.addresses = emptyIfNull(customer.getAddresses())
             .stream().map(AddressDocument::new).collect(toList());
     this.cpf = customer.getCpf();
@@ -49,7 +49,7 @@ public class CustomerDocument {
         .id(this.id)
         .name(this.name)
         .telephone(this.telephone)
-        .walletNumber(this.walletNumber)
+        .driverLincenseNumber(this.driverLincenseNumber)
         .addresses(emptyIfNull(this.addresses)
             .stream().map(AddressDocument::toDomain).collect(toList()))
         .createdAt(this.createdAt)

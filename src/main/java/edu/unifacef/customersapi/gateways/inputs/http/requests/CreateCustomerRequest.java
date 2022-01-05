@@ -16,7 +16,7 @@ public class CreateCustomerRequest extends CustomerRequest {
     return Customer.builder()
         .name(super.getName())
         .telephone(super.getTelephone())
-        .walletNumber(super.getWalletNumber())
+        .driverLincenseNumber(super.getDriverLincenseNumber())
         .addresses(emptyIfNull(super.getAddress())
             .stream().map(AddressRequest::toDomain).collect(toList()))
         .cpf(super.getCpf())
