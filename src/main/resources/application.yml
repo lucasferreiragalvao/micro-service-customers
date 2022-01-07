@@ -5,4 +5,4 @@ spring:
     name: Customer-Api
   data:
     mongodb:
-      uri: mongodb://localhost:27017/customer-api
+      uri: mongodb://localhost:27031/customer-api
